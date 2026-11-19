@@ -3885,7 +3885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d3f2d8cdae2a4c8d44241d16227d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  speed: 2
+  speed: 5
   mouseSensitivity: 1
 --- !u!1 &528668112
 GameObject:
