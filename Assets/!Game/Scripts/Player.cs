@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 2;
+    public float speed;
     public float mouseSensitivity = 1;
 
     internal CharacterController characterController;
@@ -24,7 +24,14 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         Vector3 move = vertical * transform.forward + horizontal * transform.right;
-        characterController.SimpleMove(move * speed);
+
+        float resultSpeed = speed;
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            resultSpeed *= 3;
+        }
+
+        characterController.SimpleMove(move * resultSpeed);
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;// * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;// * Time.deltaTime;
